@@ -5,9 +5,7 @@ on:
       - master
 jobs:
   build:
-    name: Build Web
-    env:
-      my_secret: ${{secrets.commit_secret}}
+    name: Build and Deploy Web
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -23,7 +21,7 @@ jobs:
           git config --global user.email anthonychwong@live.com
           git config --global user.name "Anthony Wong (via GitHub Action)"
           git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/anthonychwong/Chinese-Cheque-Amount-Convertor.git
+          git remote add origin https://${{secrets.GHPAGE_SECRET}}@github.com/anthonychwong/Chinese-Cheque-Amount-Convertor.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
