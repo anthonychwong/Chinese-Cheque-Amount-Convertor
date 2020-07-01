@@ -1,3 +1,5 @@
+![Deploy](https://github.com/anthonychwong/Chinese-Cheque-Amount-Convertor/workflows/Deploy/badge.svg)
+
 # Chinese Cheque Amount Convertor
 
 The convertor translates Arabic amount to Chinese amount, and this repo host the source code of the convertor.
@@ -6,7 +8,7 @@ The convertor translates Arabic amount to Chinese amount, and this repo host the
 
 ### For casual users
 
-Go to [web page], type the Arabic amount and the corresponding Chinese amount would be shown below.
+Go to [https://anthonychwong.github.io/Chinese-Cheque-Amount-Convertor](https://anthonychwong.github.io/Chinese-Cheque-Amount-Convertor), type the Arabic amount and the corresponding Chinese amount would be shown below.
 
 ### For developers
 
