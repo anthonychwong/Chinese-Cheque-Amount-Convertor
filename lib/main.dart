@@ -101,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Text("Hello, PropellerAds!"),
             TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
