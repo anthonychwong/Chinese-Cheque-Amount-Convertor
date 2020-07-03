@@ -1,6 +1,23 @@
 import 'package:ChineseChequeConvertor/convertToCNDigit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+// change color theme to match the by me a coffee page
+Map<int, Color> buyMeACoffeeGreenMap = {
+  50: Color.fromRGBO(121, 214, 181, .1),
+  100: Color.fromRGBO(121, 214, 181, .2),
+  200: Color.fromRGBO(121, 214, 181, .3),
+  300: Color.fromRGBO(121, 214, 181, .4),
+  400: Color.fromRGBO(121, 214, 181, .5),
+  500: Color.fromRGBO(121, 214, 181, .6),
+  600: Color.fromRGBO(121, 214, 181, .7),
+  700: Color.fromRGBO(121, 214, 181, .8),
+  800: Color.fromRGBO(121, 214, 181, .9),
+  900: Color.fromRGBO(121, 214, 181, 1),
+};
+
+MaterialColor buyMeACoffeeGreen = MaterialColor(0xFF79D6B5, buyMeACoffeeGreenMap);
 
 void main() {
   runApp(MyApp());
@@ -8,7 +25,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +40,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: buyMeACoffeeGreen,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -116,7 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_display',
               style: Theme.of(context).textTheme.headline4,
-            )
+            ),
+            RaisedButton.icon(
+                icon: Icon(Icons.library_books),
+                label: Text("贊助我一本書"),
+                color: Theme.of(context).primaryColor,
+                onPressed: () =>
+                    launch("https://www.buymeacoffee.com/anthonychwong"))
           ],
         ),
       )),
