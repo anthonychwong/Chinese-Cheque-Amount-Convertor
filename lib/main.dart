@@ -1,4 +1,5 @@
 import 'package:ChineseChequeConvertor/convertToCNDigit.dart';
+import 'package:ChineseChequeConvertor/widgets/DividerTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -108,25 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 controller: _controller,
                 keyboardType: TextInputType.number),
-            Row(children: <Widget>[
-              Expanded(
-                child: new Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                    child: Divider(
-                      color: Colors.black,
-                      height: 36,
-                    )),
-              ),
-              Text("金額中文大寫"),
-              Expanded(
-                child: new Container(
-                    margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                    child: Divider(
-                      color: Colors.black,
-                      height: 36,
-                    )),
-              ),
-            ]),
+            DividerTitle(title: "金額中文大寫"),
             // Text(
             //   'You have pushed the button this many times:',
             // ),
