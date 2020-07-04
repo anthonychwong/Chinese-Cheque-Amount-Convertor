@@ -1,4 +1,5 @@
 import 'package:ChineseChequeConvertor/convertToCNDigit.dart';
+import 'package:ChineseChequeConvertor/widgets/AdBlock.dart';
 import 'package:ChineseChequeConvertor/widgets/DividerTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
@@ -109,6 +110,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 controller: _controller,
                 keyboardType: TextInputType.number),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              color: Theme.of(context).primaryColor,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    "橫幅廣告",
+                    style: Theme.of(context).textTheme.headline4
+                  )))),
             DividerTitle(title: "金額中文大寫"),
             // Text(
             //   'You have pushed the button this many times:',
@@ -122,7 +135,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: Text("贊助我一本書"),
                 color: Theme.of(context).primaryColor,
                 onPressed: () =>
-                    launch("https://www.buymeacoffee.com/anthonychwong"))
+                  launch("https://www.buymeacoffee.com/anthonychwong")),
+            DividerTitle(title: "你可能有興趣"),
+            Text(
+              "",
+              textScaleFactor: 0.1,
+            ),
+            Expanded(
+                child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    child: Wrap(
+                      alignment: WrapAlignment.center,
+                      children: [
+                        AdBlock(
+                          imageURL:
+                              "https://via.placeholder.com/300x200/79D6B5/000000/png",
+                          description: "廣告內容",
+                        ),
+                        AdBlock(
+                          imageURL:
+                              "https://via.placeholder.com/300x200/79D6B5/000000/png",
+                          description: "廣告內容",
+                        ),
+                        AdBlock(
+                          imageURL:
+                              "https://via.placeholder.com/300x200/79D6B5/000000/png",
+                          description: "廣告內容",
+                        ),
+                        AdBlock(
+                          imageURL:
+                              "https://via.placeholder.com/300x200/79D6B5/000000/png",
+                          description: "廣告內容",
+                        ),
+                      ],
+                    )))
           ],
         ),
       )),
